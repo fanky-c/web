@@ -1,0 +1,152 @@
+ 
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>测试的拖拽功能</title> 
+<style type="text/css"> 
+body, div { margin: 0; paading: 0; font-size: 12px; } 
+ul, li { margin: 0; padding: 0; list-style: none; } 
+.clear { clear: both; width: 1px; height: 0px; line-height: 0px; font-size: 1px; } 
+.bor2 { padding: 20px 0 0 0; } 
+.box { position: static; float: left; width: 200px; height: 800px; margin: 0 auto; margin-top: 15px; } 
+.bor { position: static; width: 100px; height: 100px; margin: 0 0 5px 0 ; border: 1px solid #ccc; background: #ececec; } 
+.borp { position: absolute; width: 100px; height: 80px; margin: 10px; padding: 10px; border: 1px solid #ccc; background: #ececec; } 
+.bg { float:left; width: 100px; height: 100px; margin: 8px 5px 0 auto; padding: 10px; border: 1px solid #ccc; } 
+.text2 { width: 200px; } 
+.bgColor { border: 1px dashed #f00; } 
+</style> 
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script> 
+<script type="text/javascript"> 
+$(document).ready(function() {
+	var move = false; // 移动的初始化 
+	var $bg = $(".bg");
+	var initDiv, tarDiv, tarDivHalf = 0,
+		wHalf = 0; //拖拽对象 目标对象 
+	var initPos = {
+			x: 0,
+			y: 0
+		},
+		relPos = {
+			x: 0,
+			y: 0
+		},
+		temPos = {
+			x: 0,
+			y: 0
+		};
+	var dragPos = {
+		x1: 0,
+		x2: 0,
+		y1: 0,
+		y2: 0
+	}; // 拖拽对象的四个坐标 
+	var tarDivPos = {
+		x1: 0,
+		y1: 0,
+		x2: 0,
+		y2: 0
+	}; //目标对象的四个坐标 
+	$(".bor").each(function() {
+		$(this).mousedown(function(event) {
+			borSub = $(this).index();
+			initDiv = $(".bor").eq(borSub); //拖拽对象 
+			// 鼠标 与 目标元素的相对坐标 
+			relPos.x = event.pageX - $(this).offset().left;
+			relPos.y = event.pageY - $(this).offset().top;
+
+			move = true;
+		});
+		$(document).mousemove(function(event) {
+			if (!move) {
+				return false;
+			}
+			// 下列代码是 if(move)的 程序 
+			initDiv.removeClass("bor").addClass("borp");
+			// 目标元素随鼠标移动的坐标 
+			dragPos.x1 = event.pageX - relPos.x;
+			dragPos.y1 = event.pageY - relPos.y;
+			dragPos.x2 = dragPos.x1 + initDiv.innerWidth();
+			dragPos.y2 = dragPos.y1 + initDiv.innerHeight();
+			initDiv.css({
+				left: dragPos.x1 + 'px',
+				top: dragPos.y1 + 'px'
+			});
+			$bg.each(function() {
+				tarDiv = $(this);
+				// 目标对象的坐标 
+				tarDivPos.x1 = tarDiv.offset().left;
+				tarDivPos.x2 = tarDivPos.x1 + tarDiv.width();
+				tarDivPos.y1 = tarDiv.offset().top;
+				tarDivPos.y2 = tarDivPos.y1 + tarDiv.height();
+				tarDivHalf = tarDiv.height() / 2; //临时变量，以便于在if判断中使用 
+				wHalf = tarDiv.width() / 2;
+				if (dragPos.x2 >= tarDivPos.x1 + wHalf && dragPos.x2 <= tarDivPos.x2 + wHalf && dragPos.y2 >= tarDivPos.y1 + tarDivHalf && dragPos.y2 <= tarDivPos.y2 + tarDivHalf) {
+					if (tarDiv.children().length > 0) {
+						return false;
+					} // 解决重叠元素 移动到一个目标元素 
+					tarDiv.removeClass("bg").addClass("bg bgColor");
+				} else {
+					tarDiv.removeClass("bgColor");
+				}
+			});
+		}).mouseup(function(event) {
+			initDiv.appendTo($(".bgColor")); // 利用 apppendTo 方法 使拖动元素对象添加到指定的区域。 
+			initDiv.removeClass("borp").addClass("bor").removeAttr("style"); //恢复拖拽对象初始的样式 
+			move = false;
+		});
+	});
+});
+</script> 
+</head> 
+<body> 
+<div class="box"> 
+	<div class="bor">bor1</div> 
+<!-- 	<div class="bor">bor2</div> 
+	<div class="bor">bor3</div>  -->
+</div> 
+
+<div class="box2"> 
+<div class="bg" id="bg1"></div> 
+<div class="bg" id="bg2"></div> 
+<div class="bg" id="bg3"></div> 
+<div class="bg" id="bg4"></div> 
+<div class="bg" id="bg5"></div> 
+<div class="bg" id="bg6"></div> 
+<div class="bg" id="bg7"></div> 
+<div class="bg" id="bg8"></div> 
+<div class="bg" id="bg9"></div> 
+<div class="bg" id="bg10"></div> 
+<div class="bg" id="bg11"></div> 
+<div class="bg" id="bg12"></div> 
+<div class="bg" id="bg13"></div> 
+<div class="bg" id="bg14"></div> 
+<div class="bg" id="bg15"></div> 
+<div class="bg" id="bg16"></div> 
+<div class="bg" id="bg17"></div> 
+<div class="bg" id="bg18"></div> 
+<div class="bg" id="bg19"></div> 
+<div class="bg" id="bg20"></div> 
+<div class="bg" id="bg21"></div> 
+<div class="bg" id="bg22"></div> 
+<div class="bg" id="bg23"></div> 
+<div class="bg" id="bg24"></div> 
+<div class="bg" id="bg25"></div> 
+<div class="bg" id="bg26"></div> 
+<div class="bg" id="bg27"></div> 
+<div class="bg" id="bg28"></div> 
+<div class="bg" id="bg29"></div> 
+<div class="bg" id="bg30"></div> 
+<div class="bg" id="bg31"></div> 
+<div class="bg" id="bg32"></div> 
+<div class="bg" id="bg33"></div> 
+<div class="bg" id="bg34"></div> 
+<div class="bg" id="bg35"></div> 
+<div class="bg" id="bg36"></div> 
+<div class="bg" id="bg37"></div> 
+<div class="bg" id="bg38"></div> 
+<div class="bg" id="bg39"></div> 
+</div> 
+<div class="clear"></div> 
+</body> 
+</html> 

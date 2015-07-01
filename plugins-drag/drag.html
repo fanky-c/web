@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>drag</title>
+<style type="text/css">
+*{
+     padding:0px;
+	 margin:0px;	
+	}
+#wrap{
+   position:relative;
+   width:500px;
+   height:500px;
+   border:1px solid black;
+   left:100px;
+   top:100px;	
+	}	
+#tar{
+   width:100px;
+   height:100px;
+   border:1px solid red;
+   position:absolute;
+   cursor:move;	
+	}		
+</style>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+</head>
+
+<body style="height:2000px;">
+  <div id="wrap">
+     <div id="tar"></div>
+  </div> 
+</body>
+
+<script type="text/javascript">
+
+//插件开始
+(function($){
+   $.fn.zcDrag=function(options){
+	  return this.each(function(){
+		var ops=$.extend({left:'0px',top:'0px',backgroundColor:'red'},options||{}),drag,mouseX,mouseY,objX,objY;
+		   		   
+		var $this=$(this),thisWidth=$this.width()
+		,thisHeight=$this.height(),parent=$this.parent()
+		,parX=parent.offset().left,parY=parent.offset().top
+		,parWidth=parent.width(),parHeight=parent.height();     
+
+         $this.css({'left':ops.left,'top':ops.top,'background':ops.backgroundColor})   //初始化
+		   		   
+		   $this.mousedown(_mousedown);  //鼠标按下去
+		   $(document).mousemove(_mousemove)  //鼠标移动
+		   $(document).mouseup(_mouseup)    //鼠标释放
+		   
+		   function _mousedown(e){   
+			   var e=e||window.event;
+			   mouseX=e.clientX;
+			   mouseY=e.clientY;
+			   objX=parseInt($this.css('left'));
+		       objY=parseInt($this.css('top'));
+			   drag=true;
+			   };
+			   
+		   function _mousemove(e){
+			   if(drag){
+				   var e=e||window.event;
+				   var nowX=e.clientX-mouseX+objX;
+				   var nowY=e.clientY-mouseY+objY;
+                    
+                    if(nowX<0){
+						nowX=0;
+						}else if(nowX>parWidth-thisWidth){
+							nowX=parWidth-thisWidth; 
+							};
+						
+					if(nowY<0){
+						nowY=0;
+					  }else if(nowY>parHeight-thisHeight){
+						nowY=parHeight-thisHeight; 
+						  }
+						  
+				   $this.css({'left':nowX+'px','top':nowY+'px'})
+				   }			   
+			   };
+			   
+			function _mouseup(){
+				 if(drag) ops.callBack&&ops.callBack.apply($this);
+				 drag=false;
+				 } 	   
+		   });
+	   };		
+})(jQuery)
+
+jQuery(function(){
+   $('#tar').zcDrag({
+	   left:'0px',
+	   top:'0px',
+	   callBack:function(){
+	   	   alert('top:'+$(this).position().top+'   left:'+$(this).position().left)
+	   }
+	   });
+	   	
+	})
+
+
+
+
+
+</script>
+</html>

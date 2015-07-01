@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+	<title>arc</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+     window.onload=function(){
+         var canvas=document.getElementById('canvas'),
+             context=canvas.getContext('2d');
+             canvas.width='800';
+             canvas.height='600';
+            
+            context.beginPath();
+            context.lineWidth="3";
+            context.strokeStyle="red";
+            context.arc(100,100,100,0,1.5*Math.PI);
+            context.stroke();
+            context.closePath();
+
+            context.beginPath();
+            context.lineWidth="3";
+            context.strokeStyle="blue";
+            context.arc(300,300,100,0,1.5*Math.PI,true);
+            context.stroke();
+            context.closePath();            
+
+     } 
+	</script>
+</html>

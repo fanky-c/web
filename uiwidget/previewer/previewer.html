@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link style="text/css" rel="stylesheet" href="css/uiwidget-previewer.css"/>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="js/uiwidget-previewer.js"></script>
+<style>
+
+</style>
+<script type="text/javascript">
+
+var previewer;
+$(document).ready(function() {		
+//alert($.param({tt:'&&32354! *( ) '}));
+//alert(encodeURIComponent('&&32354! *( ) '));
+
+	previewer = $("#container").previewer({
+		data : [{save_path:'1.jpg',name:'pretty1'}, 
+		{save_path:'2.jpg',name:'pretty2'},
+		{save_path:'3.jpg',name:'pretty3'}],
+		src : '../../images/pretty.jpg',
+		containerWidth : 800,		
+		containerHeight : 600,		
+		overflowCursor : 'gray',
+		play : $('#play'),
+		pause : $('#pause'),
+		stop : $('#stop'),
+		leftRotate : $('#leftRotate'),
+		rightRotate : $('#rightRotate'),
+		onChangeImage : function(t, n){// t 当前previewer对象，n 当前相片json对象
+			if(n == 'first'){
+				alert("已经是第一张")
+			}else if(n == 'end'){
+				alert("已经是最后一张")
+			}else{
+				t.renderImage(n.save_path);
+			}
+		
+		},
+		onLoadError : function(t, n, i){
+			if(confirm("加载图片"+n.save_path+"失败！确定：下一张，取消：上一张"))
+				t.goTo(i+1);//继续下一张
+			else
+				t.goTo(i-1);//继续上一张
+		}
+	});
+})
+</script>
+</head>
+<body>
+<div style="height:1000px">
+<div id="container">
+
+</div>
+<br/>
+<br/>
+<br/>
+<button id="play">播放</button>
+<button id="pause">暂停</button>
+<button id="stop">停止</button>
+<button id="leftRotate">左旋转</button>
+<button id="rightRotate">右旋转</button>
+</div>
+</body>
+</html>
+
+

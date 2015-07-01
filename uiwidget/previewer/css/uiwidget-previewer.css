@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/**
+图片预览组件
+*/
+.previewer-container {
+	text-Align: center;
+}
+
+.previewer-image {
+	border: 0px solid #F00;
+}
+
+/* left arrow*/
+.previewer-pre {
+	background: url(../images/0.gif) no-repeat;
+	cursor: url(../images/left.cur), auto;
+	outline: none;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.previewer-pre-dis {
+	cursor: url(../images/left-dis.cur), auto;
+}
+
+/* right arrow*/
+.previewer-next {
+	background: url(../images/0.gif) no-repeat;
+	cursor: url(../images/right.cur),auto;
+	outline: none;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+
+.previewer-next-dis {
+	cursor: url(../images/right-dis.cur),auto;
+}

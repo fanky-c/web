@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+	<title>demo3</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          /*border: 1px solid red;*/
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+       window.onload=function(){
+            var tangram=[
+                 {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:'red'},
+                 {p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:'yellow'},
+                 {p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:'blue'},
+                 {p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:'green'},
+                 {p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:'black'},
+                 {p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:'gray'},
+                 {p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:'glod'},
+            ];
+
+            var canvas=document.getElementById('canvas'),
+                context=canvas.getContext('2d');
+                canvas.width=800;
+                canvas.height=800;
+                
+                for(var i=0;i<tangram.length;i++){
+                      draw(tangram[i],context);
+                };
+
+                function draw(pic,cxt){
+                    cxt.beginPath();
+                    cxt.moveTo(pic.p[0].x,pic.p[0].y);
+                    
+                    for(var i=1;i<pic.p.length;i++){
+                          
+                          cxt.lineTo(pic.p[i].x,pic.p[i].y);
+                        
+                        }
+
+                         cxt.closePath();
+                         cxt.fillStyle=pic.color;
+                         cxt.fill();
+                         cxt.lineWidth="3";
+                         cxt.strokeStyle="gold";
+                         cxt.stroke();
+                }
+       }
+	</script>
+</html>

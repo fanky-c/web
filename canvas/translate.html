@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+	<title>demo1</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin: 0 auto;
+          display: block; 
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+        window.onload=function(){
+             var canvas=document.getElementById('canvas'),
+                 context=canvas.getContext('2d');
+                
+                 context.save();
+                 context.globalAlpha="0.1"
+                 context.fillStyle="red";
+                 context.lineWidth="4";
+                 context.strokeStyle="green";
+                 context.translate(100,100);
+                 context.scale(3,1);
+                 context.strokeRect(0,0,100,100);
+                 context.fill();
+                 context.stroke();
+                 context.restore();
+                
+                 context.save();
+                 context.fillStyle="pink";
+                 context.translate(200,200);
+                 context.rotate(10/180*Math.PI);  //里面的角度是弧度制
+                 context.fillRect(0,0,100,100);                 
+                 context.restore();
+
+        }
+	</script>
+</html>

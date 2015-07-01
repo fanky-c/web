@@ -1,0 +1,25 @@
+@charset "utf-8";
+/**
+图片预览组件
+*/
+.previewer-container {
+	text-Align: center;
+	top: 50px;
+	left: 100px;
+	border: 1px solid #F00;
+}
+.previewer-image {
+	border: 0px solid #F00;
+}
+.previewer-zoom {
+	font: 12px/ 16px Arial, Helvetica, sans-serif;
+	position: absolute;
+	z-index: 100;
+	border: 1px solid #000;
+	padding: 2px;
+	cursor: pointer;
+	background-color: #fff;
+	font FILTER: alpha(opacity = 50);
+	-moz-opacity: 0.50;
+	height: 15px;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>dragTarget</title>
+<style type="text/css">
+*{
+     padding:0px;
+	 margin:0px;	
+	}
+html,body{
+	height: 100%;
+	width: 100%;
+}	
+#wrap{
+   position:relative;
+   width:500px;
+   height:500px;
+   border:1px solid black;
+   left:100px;
+   top:100px;	
+	}	
+#tar{
+   width:50px;
+   height:50px;
+   border:1px solid #666;
+   position:absolute;
+   cursor:move;
+   background-color: #333;	
+	}
+.ulWrap{
+  padding-top: 200px;
+}
+.ulWrap li{
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+	float: left;
+	list-style-type: none;
+}
+li.bgColor{
+	border: 1px dashed #f00; 
+}		
+</style>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+</head>
+
+<body style="height:2000px;position:relative;">
+	<div id="tar"></div>
+     <ul class="ulWrap">
+        <li class="box1"></li>
+        <li class="box2"></li>
+        <li class="box3"></li>
+        <li class="box4"></li>
+        <li class="box5"></li>
+     </ul>     
+</body>
+
+<script type="text/javascript">
+
+//插件开始
+(function($){
+   $.fn.zcDrag=function(options){
+	  return this.each(function(){
+		var ops=$.extend({left:'0px',top:'0px',backgroundColor:'red'},options||{}),drag,mouseX,mouseY,objX,objY;
+		   		   
+		var $this=$(this),thisWidth=$this.width()
+		,thisHeight=$this.height(),parent=$this.parent()
+		,parX=parent.offset().left,parY=parent.offset().top
+		,parWidth=parent.width(),parHeight=parent.height();
+
+		var initPos = {x: 0,y: 0},
+			relPos = {x: 0,y: 0},
+			temPos = {x: 0,y: 0};
+			
+		var dragPos = {x1: 0,x2: 0,y1: 0,y2: 0}; // 拖拽对象的四个坐标 
+			
+		var tarDivPos = {x1: 0,y1: 0,x2: 0,y2: 0}; //目标对象的四个坐标 
+	    
+	    var tarDivHalf = 0,wHalf = 0; //拖拽对象 目标对象 		     
+
+         $this.css({'left':ops.left,'top':ops.top,'background':ops.backgroundColor})   //初始化
+		   		   
+		   $this.mousedown(_mousedown);  //鼠标按下去
+		   $(document).mousemove(_mousemove)  //鼠标移动
+		   $(document).mouseup(_mouseup)    //鼠标释放
+		   
+		   function _mousedown(e){   
+			   var e=e||window.event;
+			   e.preventDefault();
+			   relPos.x = e.pageX - $this.offset().left;
+			   relPos.y = e.pageY - $this.offset().top;
+			   drag=true;
+			   };
+			   
+		   function _mousemove(e){
+		   	   
+		   	   e.preventDefault();
+			   
+			   if(drag){
+				   var e=e||window.event;
+
+					$this.removeClass("bor").addClass("borp");
+					
+					// 目标元素随鼠标移动的坐标 
+					dragPos.x1 = e.pageX - relPos.x;
+					dragPos.y1 = e.pageY - relPos.y;
+					dragPos.x2 = dragPos.x1 + $this.innerWidth();
+					dragPos.y2 = dragPos.y1 + $this.innerHeight();
+
+					$this.css({left: dragPos.x1+'px',top:dragPos.y1+'px'});
+					
+					$('.ulWrap>li').each(function() {						
+						tarDiv = $(this);
+						
+						// 目标对象的坐标 
+						tarDivPos.x1 = tarDiv.offset().left;
+						tarDivPos.x2 = tarDivPos.x1 + tarDiv.width();
+						tarDivPos.y1 = tarDiv.offset().top;
+						tarDivPos.y2 = tarDivPos.y1 + tarDiv.height();
+						tarDivHalf = tarDiv.height() / 2; //临时变量，以便于在if判断中使用 
+						wHalf = tarDiv.width() / 2;
+						
+						if (  dragPos.x2  >= tarDivPos.x1 + wHalf 
+							&& dragPos.x2 <= tarDivPos.x2 + wHalf 
+							&& dragPos.y2 >= tarDivPos.y1 + tarDivHalf 
+							&& dragPos.y2 <= tarDivPos.y2 + tarDivHalf) {
+							
+							if (tarDiv.children().length > 0) {
+								return false;
+							} // 解决重叠元素 移动到一个目标元素 
+							
+							tarDiv.addClass("bgColor");
+						} else {
+							tarDiv.removeClass("bgColor");
+						}
+					});
+
+
+				   }			   
+			   };
+			   
+			function _mouseup(){
+				 if(drag){
+				    $this.appendTo($(".bgColor")); // 利用 apppendTo 方法 使拖动元素对象添加到指定的区域。 
+				    $this.removeClass("borp").addClass("bor").removeAttr("style"); //恢复拖拽对象初始的样式 
+				 	ops.callBack&&ops.callBack.apply($this);
+				 } 
+				 drag=false;
+				 } 	   
+		   });
+	   };		
+})(jQuery)
+
+jQuery(function(){
+   $('#tar').zcDrag({
+	   left:'0px',
+	   top:'0px',
+	   backgroundColor:'#333',
+	   callBack:function(){
+	   	   console.log('top:'+$(this).position().top+'   left:'+$(this).position().left)
+	   }
+	   });
+	   	
+	})
+
+
+
+</script>
+</html>

@@ -1,0 +1,7 @@
+.uploadifyExt-inner-span{ line-height:17px; display:block; word-break:break-all; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:auto!important; *width:100%; padding:3px 4px 3px 2px; -moz-user-select:-moz-none}
+.uploadifyExt-main{width:100%; border:0; table-layout:fixed}
+.uploadifyExt-align-left{padding-left:1px;text-align:left;}
+.uploadifyExt-align-right{padding-right:1px;text-align:right;}
+.uploadifyExt-align-center{text-align:center;}
+.uploadifyExt-input-text{background:none repeat scroll 0 0 #FFFFFF;border:1px solid #0284E4;color:#3B6A99;height:18px;width:100%;}
+.uploadifyExt-main .del {background:url("../images/music/del_icon.gif") no-repeat scroll 0 0 transparent;display:block;height:12px;margin:0 auto;width:12px;}

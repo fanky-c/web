@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<!-- 开启对web app程序的支持 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- 全屏模式浏览 -->
+<meta name="apple-touch-fullscreen" content="yes">
+<!-- 改变Safari状态栏的外观 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 禁止自动识别5位以上数字为电话 -->
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<link href="style/main.css" rel="stylesheet" />
+<style type="text/css">
+body,td,th { font-family: \5B8B\4F53, "Arial Narrow", HELVETICA; }
+</style>
+</head>
+
+<body>
+<div class="main_dn">
+	<div class="midwrap_mdn">
+		<span id="winInfo"></span>
+		<canvas id="scratch" width="240" height="106"></canvas>
+	</div>
+</div>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/lottery.js"></script>
+<script type="text/javascript">
+    new lottery('#scratch',{
+	       fillStyle:'#bdbdbd',
+		   showTxt:'iphone6'
+		},function(){
+	    alert('抽奖完毕');	
+		});
+</script>
+</body>
+</html>

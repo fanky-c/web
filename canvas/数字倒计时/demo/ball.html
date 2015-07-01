@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+	<title>arc</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin:0 auto;
+          display: block;
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+<script type="text/javascript">
+  window.onload=function(){
+      var canvas=document.getElementById('canvas');
+      var context=canvas.getContext('2d');
+
+          canvas.width=1024;
+          canvas.height=400;
+       
+       var ball={
+          x:521,
+          y:100,
+          r:20,
+          vx:-4,
+          vy:-3,
+          g:2,
+          color:'red'
+      }   
+
+          setInterval(function(){
+             render(context,ball);
+             update(context,ball);
+          },50)
+  }
+
+  function render(cxt,ball){
+     cxt.clearRect(0,0,cxt.canvas.width,cxt.canvas.height);
+     cxt.fillStyle=ball.color;
+     cxt.beginPath();
+     cxt.arc(ball.x,ball.y,ball.r,0,2*Math.PI);
+     cxt.closePath();
+     cxt.fill();
+  };
+
+  function update(cxt,ball){
+      ball.x+=ball.vx;
+      ball.y+=ball.vy;
+      ball.vy+=ball.g;
+
+      if(ball.y>=cxt.canvas.height-ball.r){
+          ball.y=cxt.canvas.height-ball.r;
+          ball.vy=-ball.vy*0.7;
+      } 
+
+      if(ball.x<=ball.r){
+          ball.x=ball.r;
+      }
+
+      if(ball.x<=ball.r&&ball.y>=cxt.canvas.height-ball.r){
+           ball.vy=0;
+           ball.vx=0;
+           ball.y=cxt.canvas.height-ball.r;
+           ball.x=ball.r;
+      }
+  }
+
+</script>
+</html>

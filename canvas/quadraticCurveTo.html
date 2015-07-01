@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+	<title>demo1</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin: 0 auto;
+          display: block; 
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+        window.onload=function(){
+             var canvas=document.getElementById('canvas'),
+                 context=canvas.getContext('2d');
+                 
+                 context.strokeStyle="red";
+                 context.beginPath();
+                 context.moveTo(0,0);
+                 context.lineTo(10,10);
+                 context.closePath();
+                 context.stroke()
+
+                 context.beginPath();
+                 context.moveTo(10,10);
+                 context.quadraticCurveTo(100,40,100,100);
+                 context.stroke();
+
+        }
+	</script>
+</html>

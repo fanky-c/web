@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>1931中国女子偶像天团</title>
+<meta content="1931中国女子偶像天团招募报名" name="Keywords">
+<link rel="icon" href="http://res.m.yystatic.com/live/images/favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" href="http://res.m.yy.com/act/css/??header.css,uiwidget-popup.css,uiwidget-messagebox.css" />
+<link type="text/css" rel="stylesheet" href="../../css/1931/introduce.css" />
+
+</head>
+<body class="png">
+<!--头部通栏开始-->
+<div class="room-header">
+	<div class="header-con">
+		<div class="logo">
+			<a href="http://m.yy.com" target="_blank"><img src="http://res.m.yystatic.com/live/images/room/logo.gif?v1.0"></a>
+		</div>
+		<div class="search-con">
+			<input type="text" class="search-txt searchKeyTextClass" id="txtSearch" value="输入关键词或主播昵称" alt="输入关键词或主播昵称"/>
+			<form target="_blank" method="get" action="http://m.yy.com/live/room/result.html" id="searchFormId">
+				<input type="hidden" name="keyParam" value="" class="searchKeyInForm"><a class="search-btn" href="#" onclick="searchBtnClickFromIndex();return false;" alt="搜索主播">搜索</a>
+			</form>
+			<div class="search-list" id="searchList" style="display: none;"></div>
+		</div>
+		<div class="no-login" id="noLoginBox" style="display: none;">
+			<a href="javascript:showLoginBox('直播间');" class="dl">登录</a>&nbsp;&nbsp;<span style="color: #CACACA" alt="YY娱乐-登录">|</span>&nbsp;&nbsp;<a href="http://udb.duowan.com/register.do?appid=11&url=http://m.yy.com/"  onclick="_hmt.push(['_trackEvent','直播间','注册']);" target="_blank" class="zc" alt="YY娱乐-注册">注册</a>&nbsp;&nbsp;
+			<span style="color: #CACACA">|</span>&nbsp;&nbsp;
+		</div>
+		<div class="login" style="display: none;" id="loginBox">
+			<div class="login-box" style="left: 7px;">
+				<span class="box-line">|&nbsp;</span>
+			</div>
+			<div class="login-box" style="width: 24px;">
+				<a href="javascript:logout();" class="box-name"
+					style="padding-right: 0px;"><span>退出</span></a>
+			</div>
+			<div class="login-box">
+				<span class="box-line">|&nbsp;</span>
+			</div>
+			<div class="login-box" style="left: 4px; width: 122px;">
+				<a href="javascript:void(0);" class="box-name user_name"><span
+					id="loginNick"></span></a>
+				<div class="revise-nick" style="display: none;">
+					<ul class="revise-bottom">
+						<li><a href="javascript:void(0);" target="_blank" id="perCenter">娱乐个人中心</a></li>
+						<li><a href="javascript:void(0);" target="_blank" id="myLiveHome" style="display: none;">我的直播页面</a></li>
+					</ul>
+				</div>
+				<span class="icon"></span>
+			</div>
+		</div>
+		<div class="fuwu">
+			<div class="login-box">
+				<a href="javascript:void(0);" class="box-name">服务</a>
+				<div class="revise-nick" style="display: none;">
+					<ul class="revise-bottom">
+						<li><a href="http://bbs.yy.com/" target="_blank" alt="YY娱乐-论坛">论坛</a></li>
+						<li><a href="http://m.yy.com/zone/help/index.html" target="_blank" alt="YY娱乐-帮助">帮助</a></li>
+						<li><a href="http://m.yy.com/zone/notice/index.html" target="_blank" alt="YY娱乐-公告">公告</a></li>
+					</ul>
+				</div>
+				<span class="icon"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<!--头部通栏结束-->
+<!--正文开始-->
+	<div class="wrap">
+		<div class="top">
+		
+		</div>
+		<div class="mid">
+			<div class="mid-top">
+			</div>
+			<div class="mid-content">
+				<div class="plan">
+					<div class="title">
+						<div class="sociali">
+							<p>报名咨询</p>
+							<ul>
+								<li style="margin-right:60px;"><i class="phone"></i>TEL:(020)29162229</li>
+								<li style="margin-right:15px;"><i class="yy"></i>YY群:11831279</li>
+								<li><i class="qq"></i>QQ:2539501913</li>
+							</ul>
+						</div>
+
+						<div class="baoming">
+							<div class="baoming-num"><span id="baomingsum">1234</span>人已报名</div>
+							<a id="baoming-btn" class="baoming-btn" href="javascript:void(0);">入团报名</a>
+			                <div id="baoming_suc" class="baoming_suc" style="display: none;">已报名</div>
+			                <a href="javascript:void(0);" class="showUserForm"  onclick="$.uiwidget.popupShow({id:'newMsg'});">查看我的报名信息 <i></i></a>
+						</div>
+					</div>
+
+					<!-- part1 -->
+					<div class="step" style="display:none;">
+						<div class="step-title"></div>
+						<div class="content">
+							<p class="intro">1931是国内首支由 <span>纳斯达克上市公司</span>	 聘请 <span>港台专属造星团队</span>、注资 <span>5亿 </span>精心打造的全民少女偶像天团。</p>
+							<ul class="about">
+								<li>
+									<p class="first">当红偶像团体每年专场演出约	<span>20</span>		场</p>
+									<p>1931每年专场演出超过 <span>48</span>场</p>
+								</li>
+								<li>
+									<p class="first">好声音的演播大厅<span>1200</span>          方</p>
+									<p>1931的专属剧场有<span class="spe">2500</span>         方</p>
+								</li>
+								<li>
+									<p class="first">鸟巢容纳现场观众<span>10</span>          万人</p>
+									<p>1931的表演现场可达<span>150</span>         万人</p>
+								</li>
+								<li>
+									<p class="first">电视选秀打造的是<span>导师</span>和<span>评委</span></p>
+									<p>1931打造的就是   <span>你</span></p>
+								</li>
+							</ul>
+						</div>
+						<div class="info-item">
+							<div class="item-title step1"></div>
+							<ul class="step-bg">
+								<li>
+									<p>线上报名</p>
+									<p class="s">3月13日-4月15日</p>
+								</li>
+								<li>
+									<p>视频面试</p>
+									<p class="s">4月16日截止</p>
+								</li>
+								<li>
+									<p>现场面试</p>
+									<p class="s">4月20日截止</p>
+								</li>
+								<li class="last">
+									<p>正式入团</p>
+									<p class="s">4月28日</p>
+								</li>
+							</ul>	
+						</div>
+						<div class="info-item">
+							<div class="item-title step2"></div>
+							<div class="detal-info">
+								<p class="p1">16-22周岁，敢于追求梦想的女生。<em></em> </p>
+								<p class="p2">优秀者条件可以适当放宽，入选后将与我司签订经纪合约。</p>
+								<p class="p3"> <em></em> 您可以成为伯乐推荐人,&nbsp;推荐您认识的追梦女生。<a href="javascript:void(0);" onclick=" $.uiwidget.popupShow({id:'bole'});">查看详情 <em></em> </a> </p>
+							</div>
+						</div>
+						<div class="info-item">
+							<div class="item-title step3"></div>
+							<ul class="pay">
+								<li> <em>1</em>每月获得基本生活补贴，总额不低于大学应届毕业生就业薪资。</li>
+								<li> <em>2</em>获得线上+线下的演出分成，造星阶段同步实现。</li>
+								<li> <em>3</em>专属培训基地提供优质生活管理。</li>
+							</ul>
+						</div>
+					</div>
+					<!-- part2 -->
+					<div class="content" style="display:none;">
+						<div class="content-top" id="sign">
+							<div class="step-title">
+								<p>为了确保您的报名能顺利通过，请认真填写以下资料。</p>
+								<em></em>
+							</div>
+							<div class="step-state"></div>
+						</div>
+
+						<div class="content-mid">
+
+
+							<div class="content-mid-title1">上传照片</div>
+							<div class="upload">
+								<div class="part1">
+									<div class="warning">
+										<p>请报名者上传 <span class="strong">本人素颜正面照</span> ，<br />若上传艺术照、写真照、<br />COSPLAY照或妆容过浓者一律取消报名资格。<em>1</em>	</p>
+										<p>请注意照片附件<span class="strong">大小在1M</span>以内，<br />以免上传时间过长； <br />照片格式限制为：jpg/png/bmp <em>2</em></p>
+									</div>
+									<div class="example">
+										<div class="tip">示例照片</div>
+										<ul class="photo">
+											<li>
+												<img src="http://res.m.yystatic.com/act/images/1931/86e5.1.jpg" alt="" width="137" height="170"/>
+												<p>全身照</p>
+											</li>
+											<li>
+												<img src="http://res.m.yystatic.com/act/images/1931/6dbc.2.jpg" alt="" width="137" height="170"/>
+												<p>大头照</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="part2">
+									<p class="warning1"><span>*</span> 请参照示例照片上传您的照片</p>
+									<div class="upload-area">
+										<div class="tip">您的照片</div>
+										<ul class="photo">
+											<li>
+												<div class="flash-upload" style="display:none;">
+													<!-- <object type="application/x-shockwave-flash" name="" data="http://m.yy.com/act/swf/uploadPicYY.swf" width="137" height="170" >
+														<param name="quality" value="high">
+														<param name="allowScriptAccess" value="always">
+														<param name="allowFullScreen" value="true">
+														<param name="wmode" value="opaque">
+														<param name="flashVars" value="postUrl=http://m.yy.com/act/girlgroup/uploadZhuboPhoto.action">
+													</object> -->
+												</div>
+												<div><img src="http://static.m.yy.com/group16/M00/44/3E/tz0M9VLdH6oAAAAAAAA92lE0hpA326.jpg" alt="" width="137" height="170"/  id="allPhoto"></div>
+											</li>
+											<li>
+												<div class="flash-upload" style="display:none;">
+													<!-- <object type="application/x-shockwave-flash" name="" data="http://m.yy.com/act/swf/uploadPicYY.swf" width="137" height="170" ><param name="quality" value="high"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="wmode" value="opaque"><param name="flashVars" value="postUrl=http://m.yy.com/act/girlgroup/uploadZhuboPhoto.action"></object> -->
+												</div>
+												<div><img src="http://static.m.yy.com/group16/M00/44/3E/tz0M9VLdH6oAAAAAAAA92lE0hpA326.jpg" alt="" width="137" height="170"/  id="nearPhoto"></div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="content-mid-title2">基本资料</div>
+							<div class="person-info">
+								<p>
+									<label for="name"><strong>*</strong>姓名</label>
+								    <input type="text" id="name" name="name" />
+								</p>
+								<p>
+									<label for="nation"><strong>*</strong>民族</label>
+								    <input type="text" name="nation" id="nation"/>
+								</p>
+								<form name="ymd_form1" id="ymd_form1"> 
+									<label for="birth" class="birth"><strong>*</strong>出生年月日</label>
+									<select name="YYYY" id="YYYY" onChange="YYYYDD(this.value)"> 
+										<option value="">请选择 </option> 
+									</select>年
+									<select name="MM" id="MM" onChange="MMDD(this.value)"> 
+										<option value="">请选择 </option> 
+									</select>月
+									<select name="DD" id="DD"> 
+										<option value="">请选择 </option> 
+									</select>日
+								</form> 
+								<p>
+									<label for="idno"  class='idno id'><strong>*</strong>身份证号 <br />或（海外护照号）</label>
+								    <input type="text" id="idno" name="idno"/>
+								</p>
+								<p>
+									<label for="height"><strong>*</strong>身高(cm)</label>
+								    <input type="text" id="height" name="height"/>
+								</p>
+								<p>
+									<label for="weight"><strong>*</strong>体重(kg)</label>
+								    <input type="text" id="weight" name="weight"/>
+								</p>
+							</div>
+
+						    <div class="content-mid-title3">联系方式</div>
+							<div class="person-info connection">
+								<p>
+									<label for="city"><strong>*</strong>居住地</label>
+									<select name="lz_sf" id="s1">
+										<option></option>
+									</select>省
+									<select name="lz_sx" id="s2">
+										<option></option>
+									</select>市
+								</p>
+								<p>
+									<label for="email"><strong>*</strong>邮箱</label>
+								    <input type="text" name="email" id="email">
+								</p>
+								<p>
+									<label for="phone"><strong>*</strong>手机号</label>
+								    <input type="text" name="phone" id="phone"/>
+								    <span class="sm">(请填写中国大陆地区手机号)</span>
+								</p>
+								<p id="phoneCheckdiv" class="phoneCheckdiv">
+									<label for="verification"><strong>*</strong>验证码</label>
+								    <input type="text" id="authCode" name="verification"/>
+								    <input type="button" name="enAuthCode" value="获取验证码" onclick="sendCheckCode(this);"/>
+								    <span class="dis sm" style="display:none;">(<span class="getTimer"></span>秒后重新获取)</span>
+									<span id="codeTip" style="display:none;"></span>
+								</p>								
+							</div>
+
+						    <div class="content-mid-title"></div>
+							<div class="person-info bole">
+								<p>
+									<label for="verification-bole">伯乐推荐码</label>
+								    <input type="text" name="verification-bole"/>
+								    <span class="sm">(如没有可不填)</span>
+								    <a href="javascript:void(0);" class="to-be-bole showBoleForm">如何成为伯乐 <em></em> </a>
+								</p>
+							</div>
+
+							<div class="btn-ctrol">
+								<a class="submit-btn">确认信息并提交</a>
+							</div>
+
+						</div>
+					</div>
+					<!-- part3 -->
+					<div class="waterfall">
+						<div class="top-con">
+							<div class="step-title"></div>
+							<p>快来为你喜欢的女生点赞吧~</p>
+							<div class="sort">
+								排序：<a href="javascript:void(0);" class="active">最新上传 </a><a href="javascript:void(0);" >最多喜欢 </a>
+							</div>
+						</div>
+						<div class="content">
+							<ul class="row">
+								<li class="columns">
+									<ul>
+										<li class="item">
+											<div class="img">
+												<img src="../../images/1931/patch/demo1.jpg" width="223" title="demo1">
+											</div>
+											<div class="item-mask">
+												<a href="javascript:void(0);"></a>
+											</div>
+											<ul class="bottom">
+												<li class="girl-info">
+													<p class="name">龚叶轩</p>
+													<p class="age"><span>16</span>岁</p>
+												</li>
+												<li class="like-num">
+													<i></i>367556
+												</li>
+											</ul>
+										</li>
+										<li class="item">
+											<div class="img">
+												<img src="../../images/1931/patch/demo2.jpg" width="223" title="demo1">
+											</div>
+											<div class="item-mask">
+												<a href="javascript:void(0);"></a>
+											</div>
+											<ul class="bottom">
+												<li class="girl-info">
+													<p class="name">龚叶轩</p>
+													<p class="age"><span>16</span>岁</p>
+												</li>
+												<li class="like-num">
+													<i></i>367556
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="columns">
+									<ul>
+										<li class="item">
+											
+												<div class="img">
+													<img src="../../images/1931/patch/demo2.jpg" width="223" title="demo1">
+												</div>
+												<div class="item-mask">
+													<a href="javascript:void(0);"></a>
+												</div>
+											<ul class="bottom">
+												<li class="girl-info">
+													<p class="name">龚叶轩</p>
+													<p class="age"><span>16</span>岁</p>
+												</li>
+												<li class="like-num">
+													<i></i>367556
+												</li>
+											</ul>
+										</li>
+										<li class="item">
+											<div class="img">
+												<img src="../../images/1931/patch/demo1.jpg" width="223" title="demo1">
+											</div>
+											<div class="item-mask">
+												<a href="javascript:void(0);"></a>
+											</div>
+											<ul class="bottom">
+												<li class="girl-info">
+													<p class="name">龚叶轩</p>
+													<p class="age"><span>16</span>岁</p>
+												</li>
+												<li class="like-num">
+													<i></i>367556
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mid-bottom"></div>
+		</div>
+	</div>
+
+<!-- 弹窗开始 -->
+<div class="popupBox png" id="bole" style="display:none;">
+	<a href="javascript:void(0);" class="close-btn png" onclick="$.uiwidget.popupHide({id:'bole'});"></a>
+	<div class="content">
+		<div class="mid">
+			<div class="person-info">
+				<p>
+					<label for="bole-name"><strong>*</strong>姓名</label>
+				    <input type="text" name="bolename" id="bolename"/>
+				</p>
+				<p>
+					<label for="club" class="club"><strong>*</strong>所在公会ID <br />（或所在经纪公司）</label>
+				    <input type="text" name="club" id="bolegh"/>
+				</p>
+				<p>
+					<label for="bole-phone"><strong>*</strong>手机号码</label>
+				    <input type="text" name="bole-phone" id="bolephoneNo"/>
+				</p>
+				<p id="BoleCheckdiv" class="BoleCheckdiv">
+						<label for="verification"><strong>*</strong>验证码</label>
+					    <input type="text" id="authCode" name="verification"/>
+					    <input type="button" name="enAuthCode" value="获取验证码" onclick="sendCheckCode(this);"/>
+					    <span class="dis sm" style="display:none;">(<span class="getTimer"></span>秒后重新获取)</span>
+						 <span id="codeTip" style="display:none;"></span>
+					</p>
+				<p class="recommendma">
+					<label for="verification"><strong>*</strong>推荐码</label>
+				    <input type="text" id="recommendma" name="verification"/>
+				</p>
+			</div>
+			<div class="notice">
+				<h3>伯乐奖励</h3>
+				<p>选手成功通过视频面试，并参加现场面试，推荐者将获得如下奖励（2选1）：<br />A．193开头的6位YY纪念群号<br />B．1000元现金<em>1</em></p>
+				<p>选手若成功通过现场面试并与欢聚传媒签约，推荐者将获得如下奖励（2选1）：<br />A．1931开头的6位YY纪念群号+1931开头的6位纪念YY号<br />B．10000元现金<em>2</em></p>
+				<p>推荐者两次所获奖励可以累加。<em>3</em></p>
+			</div>
+			<div class="btn-ctrol">
+				<div class="submit-btn" onclick="applyGirlBole();">提交伯乐信息</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="newMsg" style="display:none;">
+	<a href="javascript:void(0);" class="close-btn" onclick="$.uiwidget.popupHide({id:'newMsg'});">X</a>
+	<div class="newMsg">
+		<p class="title">请填写您报名时输入的手机号</p>
+	</div>
+	<div class="newMsg">
+		<label for="phone">手机号</label>
+	    <input type="text" name="phone" id="phone">
+	</div>
+	<div class="newMsg">
+		<label for="verification">验证码</label>
+	    <input type="text" id="authCode" name="verification">
+	    <input type="button" name="enAuthCode" value="获取验证码" onclick="sendCheckCode(this);">
+	    <span class="dis sm" style="display:none;">(<span class="getTimer"></span>秒后重新获取)</span>
+		<span id="codeTip" style="display:none;"></span>
+	</div>
+	<div class="btn-ctrol">
+		<div class="submit-btn" onclick="applyGirlBole();">确定</div>
+	</div>
+</div>
+<!-- 弹窗结束 -->
+<!--正文结束-->
+<!--底部开始-->
+<div class="footer-wrap">
+	<div class="footer">
+		<a title="关于欢聚" href="http://www.huanju.cn/s/introduction.html" target="_blank">关于欢聚</a> | 
+		<a title="欢聚招聘" href="http://www.huanju.cn/s/join.html" target="_blank">欢聚招聘</a> | 
+		<a title="联系欢聚" href="http://www.huanju.cn/s/contact.html" target="_blank">联系欢聚</a> | 
+		<a title="YY音乐-用户服务协议" href="http://m.yy.com/zone/help/license.html" target="_blank">用户服务协议</a> | 
+		客服频道：<b><a title="客服频道" href="http://www.yy.com/go.html#10" target="_blank" style="color:#FA7408;">10</a></b> | 
+		<a title="YY客服中心" href="http://kf.yy.com" target="_blank">YY客服中心</a> | 
+		<a title="Investor Relations" href="http://investors.yy.com/" target="_blank">Investor Relations</a><br>
+		© 2005-2014 YY.com , All rights reserved. 
+		<a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备09075143号</a>  |  备案编号：4401060102637
+	</div>
+</div>
+<!--底部结束-->
+<a title="返回顶部" href="#" class="gototop png" id="gototop" style="display: block;"></a>
+		<script type="text/javascript" src="http://res1.m.yystatic.com/act/js/??jquery.min.js,jquery.url.min.js,jquery.cookie.min.js,jquery.form.js,common.js,commons/jquery-ext.js,uiwidget/uiwidget-popup.min.js,uiwidget/uiwidget-messagebox.min.js,uiwidget/uiwidget-page.min.js,eye.js,error/error_code2.js"></script>
+		<script type="text/javascript" src="http://res.m.yystatic.com/live/js/??commons/common-util.js,hiido.js,login.js,head.js?v=35"></script>
+		<script type="text/javascript" src="http://res.udb.duowan.com/js/oauth/udbsdk/qlogin/udb.sdk.qlogin.all.min.js" defer></script>
+		<script type="text/javascript" src="http://res.duowan.com/pay/auth/js/auth.js" defer></script>
+		<link type="text/css" rel="stylesheet" href="http://res.duowan.com/pay/auth/web/style.css?v=2.0" />
+		<script type="text/javascript" src="../../js/1931/province_city.js"></script>
+		<script type="text/javascript">addUVToHiido(['_c415963']);</script>
+		<script type="text/javascript">
+			var beforeYearNum = 100;
+			var afterYearNum = 0;
+			function YYYYMMDDstart() 
+			{ 
+			MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; 
+
+			//先给年下拉框赋内容 
+			var y = new Date().getFullYear(); 
+			for (var i = (y + afterYearNum); i >= (y - beforeYearNum); i--) //以今年为准，前90年，后30年 
+			document.ymd_form1.YYYY.options.add(new Option(" "+ i +"", i)); // 年份
+
+			//赋月份的下拉框 
+			for (var i = 1; i < 13; i++) 
+			document.ymd_form1.MM.options.add(new Option(" " + i + "", i)); // 月份
+			// document.ymd_form1.YYYY.value = y; 
+			// document.ymd_form1.MM.value = new Date().getMonth() + 1; 
+			var n = MonHead[new Date().getMonth()]; 
+			if (new Date().getMonth() ==1 && IsPinYear(y)) n++; 
+			writeDay(n); //赋日期下拉框Author:meizz 
+			// document.ymd_form1.DD.value = new Date().getDate(); 
+			} 
+			$(YYYYMMDDstart);
+			function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年) 
+			{ 
+			var MMvalue = document.ymd_form1.MM.options[document.ymd_form1.MM.selectedIndex].value; 
+			if (MMvalue == ""){ var e = document.ymd_form1.DD; optionsClear(e); return;} 
+			var n = MonHead[MMvalue - 1]; 
+			if (MMvalue ==2 && IsPinYear(str)) n++; 
+			writeDay(n) 
+			} 
+			function MMDD(str) //月发生变化时日期联动 
+			{ 
+			var YYYYvalue = document.ymd_form1.YYYY.options[document.ymd_form1.YYYY.selectedIndex].value;
+			if (YYYYvalue == ""){ var e = document.ymd_form1.DD; optionsClear(e); return;} 
+			var n = MonHead[str - 1]; 
+			if (str ==2 && IsPinYear(YYYYvalue)) n++; 
+			writeDay(n) 
+			} 
+			function writeDay(n) //据条件写日期的下拉框 
+			{ 
+			var e = document.ymd_form1.DD; optionsClear(e); 
+			for (var i=1; i <(n+1); i++) 
+			e.options.add(new Option(" "+ i + "", i)); // 日
+			} 
+			function IsPinYear(year)//判断是否闰平年 
+			{ return(0 == year%4 && (year%100 !=0 || year%400 == 0));} 
+			function optionsClear(e) 
+			{ 
+			e.options.length = 1; 
+			} 
+			function asTojs(type,url){
+			if(type == 1){
+				window.wholeBodyImage = url;
+			}else{
+				window.upperBodyImage = url;
+			}
+		}
+		</script>
+		<script type="text/javascript" src="http://res.m.yystatic.com/act/js/1931/phoneCheck.js"></script>
+		<script type="text/javascript" src="../../js/1931/register.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".done input").attr("readonly","true").unbind();
+			});
+		</script>
+		<!--[if IE 6]>
+		 <script type="text/javascript" src="http://www.yy.com/m/kuwo/js/DD_belatedPNG_0.0.8a.js" charset="utf-8"></script>
+		 <script type="text/javascript"> DD_belatedPNG.fix('.png'); </script>
+		 <![endif]-->
+</body>
+</html>

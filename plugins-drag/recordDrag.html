@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{
+     padding:0px;
+	 margin:0px;	
+	}
+#wrap{
+   position:relative;
+   width:500px;
+   height:500px;
+   border:1px solid black;
+   left:100px;
+   top:100px;	
+	}	
+#tar{
+   width:100px;
+   height:100px;
+   position:absolute;
+   cursor:move;	
+	}
+.play{
+    left:100px;
+	top:0px;
+	position:absolute;
+	width:100px;
+	text-align:center;	
+	}		
+</style>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+     <input type="button" value="播放" class="play" />
+     <div id="tar"></div>
+  </div> 
+</body>
+
+<script type="text/javascript">
+
+//插件开始
+(function($){
+   $.fn.zcDrag=function(options){
+	  return this.each(function(){
+		var ops=$.extend({left:'0px',top:'0px',backgroundColor:'red',buttonClass:'play',callBack:function(){}},options||{}),drag,mouseX,mouseY,objX,objY;
+		   		   
+		var $this=$(this),thisWidth=$this.width()
+		,thisHeight=$this.height(),parent=$this.parent()
+		,parX=parent.offset().left,parY=parent.offset().top
+		,parWidth=parent.width(),parHeight=parent.height(),pos=[],time=null;     
+
+         $this.css({'left':ops.left,'top':ops.top,'background':ops.backgroundColor})   //初始化
+		   		   
+		   $this.mousedown(_mousedown);  //注册鼠标按下去
+		   $(document).mousemove(_mousemove)  //注册鼠标移动
+		   $(document).mouseup(_mouseup)    //注册鼠标释放
+		   $('.'+ops.buttonClass).click(play);   //注册点击播放记录
+		   
+		   function _mousedown(e){   //鼠标按下去
+			   var e=e||window.event;
+			   mouseX=e.clientX;
+			   mouseY=e.clientY;
+			   objX=parseInt($this.position().left);
+		       objY=parseInt($this.position().top);
+			   pos.push({l:parseInt($this.position().left),t:parseInt($this.position().top)});
+			   drag=true;
+			   };
+			   
+		   function _mousemove(e){    //鼠标拖动
+			   if(drag){
+				   var e=e||window.event;
+				   var nowX=e.clientX-mouseX+objX;
+				   var nowY=e.clientY-mouseY+objY;
+                    if(nowX<0){
+						nowX=0;
+						}else if(nowX>parWidth-thisWidth){
+							nowX=parWidth-thisWidth; 
+							};						
+					if(nowY<0){
+						nowY=0;
+					  }else if(nowY>parHeight-thisHeight){
+						nowY=parHeight-thisHeight; 
+						  }
+						  
+				   $this.css({'left':nowX+'px','top':nowY+'px'});
+				   pos.push({l:parseInt($this.position().left),t:parseInt($this.position().top)});
+				   }			   
+			   };
+			   
+			function _mouseup(){    //鼠标释放
+				 drag=false;
+				 };
+		    
+			function play(){      //记录轨迹
+				 var iNow=0;
+				 time=setInterval(function(){
+					 iNow++;
+					 var last=pos[pos.length-iNow];
+					 if(last){
+						 $this.css({'left':last.l+'px','top':last.t+'px'}); 
+						 }else{
+						   clearInterval(time);
+						   iNow=0;
+						   pos=[];
+						   
+						   ops.callBack()   //回调函数	 
+							 }	 
+					 },20) 
+				}	  	   
+		   });
+	   };		
+})(jQuery)
+
+jQuery(function(){
+   $('#tar').zcDrag({
+	   left:'0px',
+	   top:'0px',
+	   backgroundColor:'black',
+	   buttonClass:'play',
+	   callBack:function(){
+		    alert('记录轨迹完成'); 
+		   }
+	   });	
+})
+
+
+
+
+
+</script>
+</html>

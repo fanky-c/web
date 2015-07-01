@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹出框</title>
+ <link type="text/css" rel="stylesheet" href="uiwidget-popup.css"/>
+ <script type="text/javascript" src="../jquery.js"></script>
+ <script type="text/javascript" src="uiwidget-popup.min.js"></script>
+ <style>
+.pop_box{ width:426px; position:absolute; left:0px; top:0px; z-index:999; background:#fff; display:none;}
+.pop_title{ width:100%; height:38px;}
+.pop_title_left{ background:url(../../images/pop_left.gif) no-repeat scroll left center; height:38px;}
+.pop_title_right{ background:url(../../images/pop_right.gif) no-repeat scroll right center; height:38px; margin:0 0 0 3px;}
+.pop_title_midle{ background:url(../../images/pop_mid.gif) repeat-x; height:38px; line-height:38px; margin:0 3px 0 0; font-size:14px; color:#000; padding:0 0 0 10px; font-weight:bold; position:relative;}
+.pop_close{ position:absolute; right:18px; top:15px; background:url(../images/pop_close.gif) no-repeat; width:10px; height:9px; cursor:pointer;}
+.pop_content{ width:424px; height:100%; overflow:hidden; border:1px #d8d8d8 solid; border-top:none; text-align:left;  font-size:14px; color:#666666;background:#fff; padding:10px 0;}
+.pop_btn{ background:url(http://m.yy.com/images/btn_bg.jpg) no-repeat; height:25px; width:78px; overflow:hidden; cursor:pointer; line-height:25px; text-align:center; color:#fff; border:none;}
+</style>
+</head>
+
+<body>
+ <button onClick="$.uiwidget.popupShow({id:'loginBox'});">popup</button>
+ 
+ <!--弹出框-->
+ <div class="pop_box" id="loginBox">
+	<div class="pop_title">
+		<div class="pop_title_left">
+			<div class="pop_title_right">
+				<div class="pop_title_midle">用户登录</div>
+				<span onClick="document.getElementById('flogin').reset();$('#loginTips').html('');$.uiwidget.popupHide({id:'loginBox'});window.backUrl='';" title="ر" class="pop_close"></span>
+			</div>
+		</div>
+	</div>
+	<div class="pop_content">
+		<form method="post" id="flogin" name="form1">
+		<table cellspacing="0" cellpadding="0" border="0" class="login_info_box">
+			<tbody><tr>
+				<td width="60">用户名：</td><td><input type="text" class="txt" name="username" id="username"></td>
+			</tr>
+			<tr>
+				<td>密　码：</td><td><input type="password" class="txt" name="passwd" id="passwd"></td>
+			</tr>
+			<tr>
+				<td>验证码：</td><td><input type="text" size="6" maxlength="4" value="" id="loginCode" name="code"><span>&nbsp;</span>
+				<img width="100" align="absmiddle" height="40" onClick="return refreshLoginCode()" id="login_check_code" src="getCheckCode.action?codeId=f733ae35-5005-4282-95cd-c12bdd0f3a97">
+				<a class="pp" style="cursor: pointer;" onClick="return refreshLoginCode()">换一张</a></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td><td class="remem"><input type="checkbox" id="remem">一周内记住登录状态</td>
+			</tr>
+		</tbody></table>
+		<div class="pop_btn_div"><input type="button" class="pop_btn" id="login_ajax" value="确定">&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onClick="document.getElementById('flogin').reset();$('#loginTips').html('');$.uiwidget.popupHide({id:'loginBox'});window.backUrl='';" class="pop_btn" value="取消"></div>
+		<p style="display:none" id="loginTips" class="pop_btn_div"></p>	
+		</form>
+	</div>
+</div>
+</body>
+</html>

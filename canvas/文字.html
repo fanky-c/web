@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+  <meta charset="utf-8">
+	<title>demo1</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin: 0 auto;
+          display: block; 
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+        window.onload=function(){
+            var canvas=document.getElementById('canvas'),
+                context=canvas.getContext('2d');
+
+                context.font="bold 40px Arial";
+                context.fillStyle="#058";
+                context.fillText('我的名字是赵超',40,100);
+
+                context.strokeStyle="#058";
+                context.lineWidth="1";
+                context.strokeText('我的名字是赵超',40,150);
+
+                context.fillText('我的名字是赵超',40,200,200);
+
+                var linearGrad=context.createLinearGradient(0,0,400,0);
+                    linearGrad.addColorStop(0.0,'red');
+                    linearGrad.addColorStop(0.25,'orange');
+                    linearGrad.addColorStop(0.5,'yellow');
+                    linearGrad.addColorStop(0.75,'green');
+                    linearGrad.addColorStop(1.0,'purple');
+
+                    context.fillStyle=linearGrad;
+                    context.fillText('我的名字是赵超',40,250);
+
+            alert(context.measureText('我的名字是赵超').width)  //返回当前环境的字体的宽度
+                  
+                  context.textAlign="center";
+                  context.textBaseline="middle";
+                  context.font="bold 50px Arial";
+                  context.fillStyle="red";
+                  context.shadowColor="#ccc";
+                  context.shadowOffsetX="6";
+                  context.shadowOffsetY="6";
+                  context.shadowBlur="3";                  
+                  context.fillText('我在正中心',canvas.width/2,canvas.height/2);
+                  
+                  context.strokeStyle="red";
+                  context.beginPath();
+                  context.moveTo(canvas.width/2,0);
+                  context.lineTo(canvas.width/2,canvas.height);
+                  context.closePath();
+                  context.stroke();
+                  
+                  context.beginPath();
+                  context.moveTo(0,canvas.height/2);
+                  context.lineTo(canvas.width,canvas.height/2);
+                  context.closePath();
+                  context.stroke();
+                    
+
+        }
+	</script>
+</html>

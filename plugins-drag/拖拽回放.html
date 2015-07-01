@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{ width:100px; height:100px; background:red; position:absolute;}
+</style>
+<script>
+window.onload = function(){
+	var oInput = document.getElementById('input1');
+	var oDiv = document.getElementById('div1');
+	var disX = 0;
+	var disY = 0;
+	var pos = [];
+	var timer = null;
+	
+	oDiv.onmousedown = function(ev){
+		var ev = ev || window.event;
+		disX = ev.clientX - oDiv.offsetLeft;
+		disY = ev.clientY - oDiv.offsetTop;
+		pos.push({L:oDiv.offsetLeft,T:oDiv.offsetTop});
+		document.onmousemove = function(ev){
+			var ev = ev || window.event;
+			
+			oDiv.style.left = ev.clientX - disX + 'px';
+			oDiv.style.top = ev.clientY - disY + 'px';
+			pos.push({L:oDiv.offsetLeft,T:oDiv.offsetTop});
+		};
+		
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		};
+		
+		return false;
+		
+	};
+	var iNow = 0;
+	oInput.onclick = function(){
+		//console.log(pos);
+		
+		timer = setInterval(function(){
+			
+			//var last = pos.pop();
+			
+			iNow++;
+			
+			var last = pos[pos.length-iNow];
+			
+			if(last){
+				oDiv.style.left = last.L + 'px';
+				oDiv.style.top = last.T + 'px';
+			}
+			else{
+				clearInterval(timer);
+				iNow = 0;
+				pos = [];
+			}
+			
+		},30);
+		
+	};
+	
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="回放" id="input1" />
+<div id="div1"></div>
+</body>
+</html>
+

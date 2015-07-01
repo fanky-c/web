@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+ *{
+	  padding:0px;
+	  margin:0px; 
+	 }
+body{
+   background:#000;
+   font:12px '宋体';	
+	}
+.nav-wrap{
+   width:200px;
+   height:200px;
+   position:absolute;
+   border:2px dashed #FFF;
+   border-radius:50%;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   -webkit-transform:translate(-50%,-50%);	
+	}
+.main-nav{
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   -webkit-transform:translate(-50%,-50%);
+   display:inline-block;
+   *display:inline;
+   *zoom:1;
+   color:#FFF;
+   background:#00F;
+   padding:10px;
+   text-decoration:none;
+   border-radius:5px;
+   font-size:14px;
+   transition:all 0.3s;
+   -webkit-transition:all 0.3s;	    	   	
+	}
+.main-nav:hover{
+    opacity:0.8;
+	filter:alpha(opacity:80);	
+	}	
+.list-wrap{
+	width:100%;
+	height:100%;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	position:relative;
+	transform:scale(0);
+	-webkit-transform:scale(0);
+	transition:all 0.3s;
+	-webkit-transition:all 0.3s;	
+	}
+.nav-wrap nav.active{
+	transform:scale(1);
+	-webkit-transform:scale(1);	
+	}	
+.list-wrap a{
+    position:absolute;
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	background:#F00;
+	text-decoration:none;
+	padding:0px 8px;
+	text-align:center;
+	height:25px;
+	line-height:25px;
+	border-radius:3px;
+	color:#FFF;
+   transform:translate(-50%,-50%);
+   -webkit-transform:translate(-50%,-50%);		
+	}									 
+</style>
+</head>
+
+<body>
+ <div class="nav-wrap">
+    <nav class="list-wrap">
+     <a href="javascript:;" class="nav-item">1</a>
+     <a href="javascript:;" class="nav-item">2</a>
+     <a href="javascript:;" class="nav-item">3</a>    
+   </nav>
+   <a href="javascript:;" class="main-nav">点我</a> 
+ </div>
+</body>
+<script src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+ window.onload=function(){
+	   var btn=$('.main-nav'),
+		   nav=$('.list-wrap'),
+		   list=nav.children('a'),
+		   flag=0;
+		   
+	  var radius=parseInt(nav.css('width'))/2,
+	      endAngle=360,
+		  startAngle=90,
+          gap=(endAngle-startAngle)/list.size();	  	   
+		  
+		  
+		  list.each(function(i){
+			    var left=radius+radius*Math.cos((startAngle+gap*i)*(Math.PI/180));
+				var top=radius+radius*Math.sin((startAngle+gap*i)*(Math.PI/180));
+			    list.eq(i).css({'top':top+'px','left':left+'px'});  
+			  })
+
+		   btn.on('click',function(){
+				  if(flag++%2==0){
+					   nav.addClass('active');
+					  }else{
+					   nav.removeClass('active');	
+						  }
+			   });
+			      
+			  
+}
+</script>
+</html>

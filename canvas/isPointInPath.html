@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+	<title>demo1</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin: 0 auto;
+          display: block; 
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+       var canvas=document.getElementById('canvas'),
+           context=canvas.getContext('2d'),
+           ball=[];
+
+           window.onload=function(){
+              canvas.width=800;
+              canvas.height=800;
+
+              for(var i=0;i<10;i++){
+                ball[i]={
+                  x:Math.random()*canvas.width,
+                  y:Math.random()*canvas.height,
+                  r:Math.random()*50+20
+                }     
+              }
+
+              draw();
+
+              canvas.addEventListener('click',delet,false)  
+           }
+
+           function draw(){
+              for(var i=0;i<ball.length;i++){
+                  context.beginPath();
+                  context.arc(ball[i].x,ball[i].y,ball[i].r,0,Math.PI*2);
+
+                  context.fillStyle="#058";
+                  context.fill();
+              }
+           } 
+
+          function delet(event){
+                    var x=event.clientX-canvas.getBoundingClientRect().left;
+                    var y=event.clientY-canvas.getBoundingClientRect().top;
+                      for(var i=0;i<ball.length;i++){
+                           context.beginPath();
+                           context.arc(ball[i].x,ball[i].y,ball[i].r,0,Math.PI*2);
+                           if(context.isPointInPath(x,y)){                               
+                                context.fillStyle="red";
+                                context.fill();  
+                           }
+                      } 
+              }   
+	</script>
+</html>

@@ -1,0 +1,1163 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  outline: none;
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+  vertical-align: middle;
+  border: none;
+  -ms-interpolation-mode: bicubic;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+}
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.clearfix:after {
+  clear: both;
+}
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1;
+}
+html {
+  background: #fff8ec;
+}
+body {
+  background: url("../../images/headline/new-body-bg.jpg") center 40px no-repeat;
+}
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.wrap .top {
+  width: 100%;
+  height: 399px;
+  background: url("../../images/headline/new-top-bg.jpg") no-repeat;
+  position: relative;
+}
+.wrap .top .time {
+  font: italic 18px "microsoft yahei";
+  color: #d06200;
+  left: 464px;
+  top: 130px;
+  position: absolute;
+}
+.wrap .top .gift {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #FAC;
+  left: 135px;
+  bottom: 40px;
+}
+.wrap .top .baoming {
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 61px;
+  bottom: 150px;
+  right: 32px;
+}
+.wrap .top .baoming .baoming-btn {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: url("../../images/headline/baoming.png") no-repeat;
+}
+.wrap .top .baoming .baoming-btn:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+.wrap .top .timeline {
+  position: absolute;
+  width: 618px;
+  height: 0;
+  border-top: 1px solid #cf670a;
+  border-bottom: 1px solid #cf670a;
+  bottom: 81px;
+  right: 63px;
+  content: "";
+  font-size: 0;
+  line-height: 0;
+  overflow: visible;
+}
+.wrap .top .timeline li {
+  float: left;
+  display: inline;
+  width: 20px;
+  height: 15px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 10px;
+  padding-top: 5px;
+  background-color: transparent;
+  background-color: rgba(181, 87, 4, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99b55704,endColorstr=#99b55704);
+  zoom: 1;
+  margin-right: 192px;
+  position: relative;
+  overflow: visible;
+}
+.wrap .top .timeline li .radius {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #f77e12;
+  vertical-align: middle;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.wrap .top .timeline li em {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 42px;
+  background: url("../../images/headline/point.png") no-repeat;
+  left: -6px;
+  top: -45px;
+  overflow: hidden;
+}
+.wrap .top .timeline li p {
+  font: 16px "microsoft yahei";
+  color: #b25400;
+  position: absolute;
+  top: 30px;
+  left: -53px;
+  width: 130px;
+  text-align: center;
+  color: #FFF;
+}
+.wrap .top .timeline li.active {
+  width: 24px;
+  height: 17px;
+  margin-top: -12px;
+  margin-left: -12px;
+  border-radius: 12px;
+  padding-top: 7px;
+  background-color: rgba(255, 255, 255, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF,endColorstr=#99FFFFFF);
+}
+.wrap .top .timeline li.active em {
+  display: block;
+  left: -4px;
+  top: -45px;
+}
+.wrap .mid {
+  padding-bottom: 105px;
+  width: 100%;
+}
+.wrap .mid .item {
+  padding: 0 46px 30px;
+  border: 1px solid #ececec;
+  background: #fffefd;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rabg(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+}
+.wrap .mid .item h1 {
+  font: italic 36px "microsoft yahei";
+  color: #ff7800;
+  text-shadow: 1px 0 1px rgba(255, 120, 0, 0.8);
+  padding-top: 30px;
+}
+.wrap .mid .item h3 {
+  font: bold 18px "microsoft yahei";
+  color: #ff7800;
+  padding: 22px 0 10px 0;
+}
+.wrap .mid .item ul.reward {
+  *zoom: 1;
+  padding-top: 30px;
+  width: 100%;
+}
+.wrap .mid .item ul.reward:before,
+.wrap .mid .item ul.reward:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .item ul.reward:after {
+  clear: both;
+}
+.wrap .mid .item ul.reward li {
+  float: left;
+  *display: inline;
+  width: 305px;
+  height: 260px;
+  overflow: hidden;
+  color: #ff7800;
+  font-family: "microsoft yahei";
+  text-align: center;
+  margin-right: 45px;
+}
+.wrap .mid .item ul.reward li.reward2 {
+  width: 244px;
+}
+.wrap .mid .item ul.reward li.reward3 {
+  width: 229px;
+  margin-right: 0;
+}
+.wrap .mid .item ul.reward li p {
+  font-size: 24px;
+}
+.wrap .mid .item ul.reward li p.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.wrap .mid .item ul.reward li p.tip {
+  font-size: 16px;
+  color: #888888;
+}
+.wrap .mid .item ul.reward li .reward1 {
+  width: 100%;
+  height: 178px;
+  margin: 0 auto;
+  background: #ACF;
+}
+.wrap .mid .item ul.rule {
+  *zoom: 1;
+}
+.wrap .mid .item ul.rule:before,
+.wrap .mid .item ul.rule:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .item ul.rule:after {
+  clear: both;
+}
+.wrap .mid .item ul.rule li {
+  font: 12px/18px "microsoft yahei";
+  color: #000;
+  margin-bottom: 6px;
+}
+.wrap .mid .item ul.rule li em {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font: 12px/18px Arial;
+  color: #FFF;
+  background: #ff7800;
+  border-radius: 9px;
+  margin-right: 8px;
+}
+.wrap .mid .item .declare {
+  margin-top: 20px;
+  padding: 14px 8px;
+  border-radius: 5px;
+  background: #fff8ec;
+  font: 12px/18px "microsoft yahei";
+  color: #ff7800;
+}
+.wrap .mid .weekend {
+  *zoom: 1;
+}
+.wrap .mid .weekend:before,
+.wrap .mid .weekend:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend:after {
+  clear: both;
+}
+.wrap .mid .weekend .left-rank,
+.wrap .mid .weekend .right-rank {
+  float: left;
+  display: inline;
+  border-radius: 5px;
+  background: #fffefd;
+}
+.wrap .mid .weekend .left-rank {
+  width: 708px;
+  margin-right: 7px;
+}
+.wrap .mid .weekend .left-rank .default-content {
+  *zoom: 1;
+}
+.wrap .mid .weekend .left-rank .default-content:before,
+.wrap .mid .weekend .left-rank .default-content:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .left-rank .default-content:after {
+  clear: both;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div,
+.wrap .mid .weekend .left-rank .default-content .richer {
+  float: left;
+  display: inline;
+  *zoom: 1;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div:before,
+.wrap .mid .weekend .left-rank .default-content .richer:before,
+.wrap .mid .weekend .left-rank .default-content .left-rank-div:after,
+.wrap .mid .weekend .left-rank .default-content .richer:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div:after,
+.wrap .mid .weekend .left-rank .default-content .richer:after {
+  clear: both;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div {
+  width: 353px;
+  border-right: 1px solid #f6f0e9;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title {
+  height: 67px;
+  background: #ebe0d0;
+  text-align: center;
+  font: bold 19px/50px "microsoft yahei";
+  *zoom: 1;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title:before,
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title:after {
+  clear: both;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title li {
+  width: 150px;
+  float: left;
+  display: inline;
+  height: 55px;
+  background: #fff8ec;
+  position: relative;
+  padding-left: 26px;
+  padding-top: 12px;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title li:nth-child(1) {
+  margin-right: 1px;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title li a {
+  color: #db6600;
+  cursor: pointer;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title li i {
+  position: absolute;
+  display: block;
+  width: 19px;
+  height: 33px;
+  background: url("../../images/headline/sprite-icon.png") 0 0 no-repeat;
+  left: 27px;
+  top: 23px;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title li em {
+  position: absolute;
+  width: 176px;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: url("../../images/headline/title-active.png") no-repeat;
+  overflow: hidden;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-title li.active em {
+  display: block;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul {
+  padding-left: 75px;
+  width: 278px;
+  *zoom: 1;
+  display: none;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul:before,
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul:after {
+  clear: both;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul.active {
+  display: block;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li {
+  width: 230px;
+  height: 48px;
+  float: left;
+  display: inline;
+  color: #000;
+  padding-top: 10px;
+  position: relative;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li div.name {
+  position: relative;
+  width: 230px;
+  height: 27px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  text-indent: 0;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li div.name p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 27px;
+  font: 14px/27px "microsoft yahei";
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li p.num {
+  font: 12px/18px Arial;
+  color: #737373;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li p.num i {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 12px;
+  height: 12px;
+  background: url("../../images/headline/sprite-icon.png") -59px -17px no-repeat;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-bottom: 3px;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li em {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font: 16px/18px Arial;
+  left: -20px;
+  top: 14px;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li.leader {
+  color: #ff7200;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .left-rank-ul li.leader p.name {
+  font-weight: bold;
+}
+.wrap .mid .weekend .left-rank .default-content .left-rank-div .left-rank-con .overlord li p.num i {
+  width: 18px;
+  height: 17px;
+  background: url("../../images/headline/sprite-icon.png") 0 -34px no-repeat;
+  margin-bottom: 0;
+}
+.wrap .mid .weekend .left-rank .default-content .richer {
+  width: 353px;
+  *zoom: 1;
+}
+.wrap .mid .weekend .left-rank .default-content .richer:before,
+.wrap .mid .weekend .left-rank .default-content .richer:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .left-rank .default-content .richer:after {
+  clear: both;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li {
+  width: 278px;
+  height: 48px;
+  float: left;
+  display: inline;
+  color: #000;
+  padding: 10px 0 0 75px;
+  position: relative;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li div.name {
+  position: relative;
+  width: 185px;
+  height: 27px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  text-indent: 0;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li div.name p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 27px;
+  font: 14px/27px "microsoft yahei";
+}
+.wrap .mid .weekend .left-rank .default-content .richer li p.num {
+  font: 12px/18px Arial;
+  color: #737373;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li p.num .highlight {
+  color: #eb6100;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li p.num i {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/headline/sprite-icon.png") -59px -34px no-repeat;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li em {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font: 16px/18px Arial;
+  left: 55px;
+  top: 14px;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li.rank-title {
+  width: 353px;
+  height: 67px;
+  background: #fff8ec;
+  padding: 0;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li.rank-title p {
+  padding-top: 12px;
+  font: bold 19px/55px "microsoft yahei";
+  color: #db6600;
+  text-align: center;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li.rank-title i {
+  position: absolute;
+  display: block;
+  width: 19px;
+  height: 33px;
+  background: url("../../images/headline/sprite-icon.png") 0 0 no-repeat;
+  left: 100px;
+  top: 23px;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li.leader {
+  color: #ff7200;
+}
+.wrap .mid .weekend .left-rank .default-content .richer li.leader p.name {
+  font-weight: bold;
+}
+.wrap .mid .weekend .left-rank .hide-content {
+  display: none;
+}
+.wrap .mid .weekend .left-rank .more-content-btn {
+  padding: 10px 0;
+  text-align: center;
+}
+.wrap .mid .weekend .left-rank .more-content-btn a {
+  font: 16px/24px "microsoft yahei";
+  color: #a4a4a4;
+}
+.wrap .mid .weekend .left-rank .more-content-btn a em {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 13px;
+  height: 13px;
+  vertical-align: middle;
+  margin-right: 3px;
+  background: url("../../images/headline/sprite-icon.png") -59px 0 no-repeat;
+  overflow: hidden;
+}
+.wrap .mid .weekend .left-rank .more-content-btn.down em {
+  background: url("../../images/headline/sprite-icon.png") -76px 0 no-repeat;
+}
+.wrap .mid .weekend .right-rank {
+  width: 282px;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul {
+  width: 282px;
+  overflow: hidden;
+  padding-bottom: 28px;
+  *zoom: 1;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul:before,
+.wrap .mid .weekend .right-rank .right-rank-ul:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul:after {
+  clear: both;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li {
+  width: 242px;
+  height: 48px;
+  float: left;
+  display: inline;
+  color: #000;
+  padding: 10px 0 0 40px;
+  position: relative;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li div.name {
+  position: relative;
+  width: 185px;
+  height: 27px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  text-indent: 0;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li div.name p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 27px;
+  font: 14px/27px "microsoft yahei";
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li p.num {
+  font: 12px/18px Arial;
+  color: #737373;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li p.num .highlight {
+  color: #eb6100;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li em {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font: 16px/18px Arial;
+  left: 20px;
+  top: 14px;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.rank-title {
+  width: 282px;
+  height: 67px;
+  background: #fffbcd;
+  padding: 0;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.rank-title p {
+  padding-top: 15px;
+  font: 22px/30px "microsoft yahei";
+  color: #db6600;
+  text-align: center;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.rank-title p i {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 38px;
+  height: 29px;
+  background: url("../../images/headline/sprite-icon.png") -20px 0 no-repeat;
+  vertical-align: middle;
+  margin: 0 5px 3px 0;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.rank-title p.lottery-list i {
+  width: 22px;
+  height: 27px;
+  background: url("../../images/headline/sprite-icon.png") -20px -30px no-repeat;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane {
+  height: 220px;
+  padding: 27px 24px 0 24px;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane .list-wrap {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane .list-wrap ul {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  *zoom: 1;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane .list-wrap ul:before,
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane .list-wrap ul:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane .list-wrap ul:after {
+  clear: both;
+}
+.wrap .mid .weekend .right-rank .right-rank-ul li.scroll-pane .list-wrap ul li {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-all;
+  padding: 0;
+  font: 16px/20px "microsoft yahei";
+  color: #ffa800;
+  margin-bottom: 5px;
+}
+.wrap .mid .weekday {
+  *zoom: 1;
+}
+.wrap .mid .weekday:before,
+.wrap .mid .weekday:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekday:after {
+  clear: both;
+}
+.wrap .mid .weekday .left-rank,
+.wrap .mid .weekday .right-rank {
+  float: left;
+  display: inline;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fffefd;
+  padding-bottom: 25px;
+}
+.wrap .mid .weekday .left-rank {
+  width: 376px;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul {
+  *zoom: 1;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul:before,
+.wrap .mid .weekday .left-rank .left-rank-ul:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul:after {
+  clear: both;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li {
+  width: 266px;
+  height: 48px;
+  float: left;
+  display: inline;
+  color: #000;
+  padding: 10px 55px 0;
+  position: relative;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li div.name {
+  position: relative;
+  width: 266px;
+  height: 27px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  text-indent: 0;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li div.name p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 27px;
+  font: 14px/27px "microsoft yahei";
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li p.num {
+  font: 12px/18px Arial;
+  color: #737373;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li p.num i {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 12px;
+  height: 12px;
+  background: url("../../images/headline/sprite-icon.png") -59px -17px no-repeat;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-bottom: 3px;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li em {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font: 16px/18px Arial;
+  left: 35px;
+  top: 14px;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li.leader {
+  color: #ff7200;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li.leader p.name {
+  font-weight: bold;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li.rank-title {
+  font: bold 19px/50px "microsoft yahei";
+  width: 376px;
+  float: left;
+  display: inline;
+  height: 60px;
+  background: #fbd9b2;
+  position: relative;
+  padding: 0;
+  text-align: center;
+  overflow: visible;
+  margin-bottom: 10px;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li.rank-title a {
+  color: #db6600;
+  cursor: pointer;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li.rank-title i {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 26px;
+  background: url("../../images/headline/tag1.png") no-repeat;
+  left: 116px;
+  top: 14px;
+}
+.wrap .mid .weekday .left-rank .left-rank-ul li.rank-title em {
+  position: absolute;
+  top: 60px;
+  left: 180px;
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-color: #fbd9b2 transparent transparent transparent;
+  border-style: dashed dashed dashed solid;
+  border-width: 10px;
+  overflow: hidden;
+}
+.wrap .mid .weekday .right-rank {
+  width: 608px;
+  margin-left: 12px;
+}
+.wrap .mid .weekday .right-rank .right-rank-title {
+  width: 100%;
+  height: 37px;
+  background: #fbd9b2;
+  border-bottom: 1px solid #f99d4b;
+  text-align: center;
+  font: 20px/37px "microsoft yahei";
+  color: #f89b49;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab {
+  height: 44px;
+  width: 608px;
+  background: #fffefd;
+  padding-bottom: 14px;
+  *zoom: 1;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab:before,
+.wrap .mid .weekday .right-rank .right-rank-tab:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab:after {
+  clear: both;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab li {
+  font: bold 19px/44px "microsoft yahei";
+  width: 228px;
+  padding-left: 76px;
+  float: left;
+  display: inline;
+  height: 44px;
+  background: #fbd9b2;
+  position: relative;
+  text-align: center;
+  overflow: visible;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab li a {
+  color: #db6600;
+  cursor: pointer;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab li i {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 26px;
+  background: url("../../images/headline/tag1.png") no-repeat;
+  left: 120px;
+  top: 10px;
+}
+.wrap .mid .weekday .right-rank .right-rank-tab li em {
+  position: absolute;
+  top: 44px;
+  left: 180px;
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-color: #fbd9b2 transparent transparent transparent;
+  border-style: dashed dashed dashed solid;
+  border-width: 10px;
+  overflow: hidden;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .time-point {
+  padding-left: 18px;
+  background: #fff8ec;
+  font: 16px/28px "microsoft yahei";
+  color: #f48420;
+  height: 28px;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box {
+  *zoom: 1;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box:before,
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box:after {
+  content: " ";
+  display: table;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box:after {
+  clear: both;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item {
+  float: left;
+  display: inline;
+  height: 50px;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li {
+  width: 190px;
+  height: 45px;
+  float: left;
+  display: inline;
+  color: #000;
+  padding: 5px 45px 0 10px;
+  position: relative;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li div.name {
+  position: relative;
+  width: 190px;
+  height: 27px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  text-indent: 0;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li div.name p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 27px;
+  font: 14px/27px "microsoft yahei";
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li p.num {
+  font: 12px/18px Arial;
+  color: #737373;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li p.num i {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 12px;
+  height: 12px;
+  background: url("../../images/headline/sprite-icon.png") -59px -17px no-repeat;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-bottom: 3px;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li em {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font: 16px/18px Arial;
+  left: 35px;
+  top: 14px;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li.leader {
+  color: #ff7200;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li.leader p.name {
+  font-weight: bold;
+}
+.wrap .mid .weekday .right-rank .right-rank-con .rank-con-box .rank-con-item li.time-point-li {
+  width: 52px;
+  height: 50px;
+  padding: 0;
+  font: 14px/50px Arial;
+  color: #a3a3a3;
+  text-align: left;
+  padding-left: 20px;
+}
+#rule {
+  margin-top: 14px;
+}
+.footer-wrap {
+  width: 100%;
+  height: 115px;
+  background: #ffffff;
+}
+.footer-wrap .footer {
+  width: 1000px;
+  text-align: center;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+.footer-wrap .footer,
+.footer-wrap .footer a {
+  font: 12px/20px Arial, Helvetica, sans-serif;
+  color: #000000;
+}
+.gototop {
+  display: block;
+  background: url("../../images/headline/patch/gotoTop.png") no-repeat;
+  width: 44px;
+  height: 41px;
+  position: fixed;
+  bottom: 150px;
+  _position: absolute;
+  _bottom: "auto";
+  left: 50%;
+  margin-left: 550px;
+}

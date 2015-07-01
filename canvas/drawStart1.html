@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+	<title>demo1</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin: 0 auto;
+          display: block; 
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+        window.onload=function(){
+           var canvas=document.getElementById('canvas'),
+               context=canvas.getContext('2d');
+               //context.lineJoin="round";  //线条的连接
+
+               var skyColor=context.createLinearGradient(0,0,0,canvas.height);   //线性渐变
+                   skyColor.addColorStop(0.0,'black');
+                   skyColor.addColorStop(1.0,'#035');
+
+               var skyColor1=context.createRadialGradient(canvas.width/2,canvas.height,0,
+                                                          canvas.width/2,canvas.height/2,canvas.height); //镜像渐变
+                   skyColor1.addColorStop(0.0,'black');
+                   skyColor1.addColorStop(1.0,'#035'); 
+
+               context.fillStyle=skyColor1;
+               context.fillRect(0,0,canvas.width,canvas.height)
+               
+               for(var i=0;i<100;i++){
+                   var R=Math.random()*5+5;
+                   var r=R*0.5;
+                   var x=Math.random()*canvas.width;
+                   var y=Math.random()*canvas.height*0.65;
+                   var rotate=Math.random()*360;
+
+                   drawStart(context,r,R,x,y,rotate);
+               }
+
+        }
+
+        function drawStart(ctx,r,R,x,y,rotate){
+            ctx.beginPath();
+            ctx.shadowColor="#058";
+            ctx.shadowOffsetX="1";
+            ctx.shadowOffsetY="1";
+            ctx.shadowBlur="1";
+            for(var i=0;i<5;i++){
+              ctx.lineTo( Math.cos((18+72*i-rotate)/180*Math.PI)*R+x,
+                         -Math.sin((18+72*i-rotate)/180*Math.PI)*R+y);
+
+              ctx.lineTo( Math.cos((54+72*i-rotate)/180*Math.PI)*r+x,
+                         -Math.sin((54+72*i-rotate)/180*Math.PI)*r+y
+                         )
+            }
+            ctx.closePath();            
+            ctx.strokeStyle="red";
+            ctx.lineWidth="4";
+            ctx.fillStyle="yellow";
+            ctx.lineJoin="round";
+            ctx.fill();
+            ctx.stroke();
+
+        }  
+	</script>
+</html>

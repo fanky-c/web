@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+	<title>demo1</title>
+	<style type="text/css">
+       *{
+       	  padding: 0px;
+       	  margin: 0px;
+       }
+       #canvas{
+          border: 1px solid red;
+          margin: 0 auto;
+          display: block; 
+       }
+	</style>	
+	</head>
+	<body>
+		<canvas width="500" height="500" id="canvas">您的浏览器不支持canvas，请升级你的浏览器！</canvas>
+	</body>
+	<script type="text/javascript">
+          window.onload=function(){
+              var canvas=document.getElementById('canvas'),
+                  context=canvas.getContext('2d');
+                  drawRoundRect(context,10,10,200,200,100,'red','black');
+
+                  drawRoundRect(context,120,120,200,200,60);
+
+          }
+
+
+          function drawRoundRect(cxt,x,y,width,height,radius,strokeStyle,fillStyle){
+             
+             if(2*radius>width||2*radius>height) return false;
+
+              cxt.save();
+              cxt.translate(x,y);
+              pathRoundRect(cxt,width,height,radius);
+              cxt.strokeStyle=strokeStyle||"black";
+              cxt.fillStyle=fillStyle||"pink";
+              cxt.fill();
+              cxt.stroke();
+              cxt.restore();     
+          }
+
+          function pathRoundRect(cxt,width,height,radius){
+               cxt.beginPath();
+               cxt.arc(width-radius,height-radius,radius,0,Math.PI/2);
+               cxt.lineTo(radius,height);
+               cxt.arc(radius,height-radius,radius,Math.PI/2,Math.PI);
+               cxt.lineTo(0,radius);
+               cxt.arc(radius,radius,radius,Math.PI,Math.PI*3/2);
+               cxt.lineTo(width-radius,0);
+               cxt.arc(width-radius,radius,radius,Math.PI*3/2,Math.PI*2);
+               cxt.closePath();           
+          }
+	</script>
+</html>
